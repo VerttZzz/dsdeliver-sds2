@@ -9,7 +9,8 @@ import com.everton.dsdeliver.entities.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 	
-	@Query("SELECT DISTINC obj FROM Order obj JOIN FETCH obj.products "
+	@Query("SELECT DISTINCT obj FROM Order obj JOIN FETCH obj.products "
 			+ "WHERE obj.status = 0 ORDER BY obj.moment ASC")
 	List<Order> findOrdersWithProducts();
+
 }
