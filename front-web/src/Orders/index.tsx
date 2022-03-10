@@ -21,9 +21,10 @@ function Orders() {
     useEffect(() => {
         fetchProducts()
         .then( response => setProducts(response.data))
-        .catch(() =>
+        .catch(error => {
           toast.warning('Erro ao listar pedidos');
-    }, []);
+        })
+      }, []);
 
     const handleSelectProduct = (product: Product) => {
         const isAlreadySelected = chekIsSelected(selectedProducts, product);
