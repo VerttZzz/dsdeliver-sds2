@@ -74,7 +74,6 @@ public class Product implements Serializable {
 	public void setImageUri(String imageUri) {
 		this.imageUri = imageUri;
 	}
-
 	
 	
 	@Override
